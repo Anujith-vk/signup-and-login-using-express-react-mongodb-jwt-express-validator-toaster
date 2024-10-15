@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import {  Link } from 'react-router-dom'
+import {  Link, useNavigate } from 'react-router-dom'
 import axios from 'axios';
 import '../App.css'
 import { ToastContainer } from 'react-toastify'
 import { handleerror, handlesuccess } from '../toastmessage'
 const Signup = () => {
 
+  const navigate=useNavigate()
   const[signinfo,setsigninfo]=useState({
     name:'',
     email:'',
@@ -32,6 +33,9 @@ const Signup = () => {
         if(response)
         {
           handlesuccess(response.data.message)
+          setTimeout(() => {
+            navigate('/login')
+          }, 1000);
         }
       } catch (error) {
         if(error.response)

@@ -80,7 +80,7 @@ const Login = () => {
                 <input type="text" placeholder='Enter your Password' name='password' onChange={handlechange} value={logininfo.password}/>
             </div>
             <button type='submit'>Login</button>
-            <p>Do not have a account <Link to={'/signup'} >Login</Link></p>
+            <p>Do not have a account <Link to={'/signup'} >signup</Link></p>
           </form>
           <ToastContainer/>
           </div>
